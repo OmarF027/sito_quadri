@@ -1,0 +1,128 @@
+/* quadri.css */
+
+.quadri {
+    padding: 100px 20px 60px;
+    background-color: #2c003e; /* Midnight Purple */
+}
+
+.menu-title-animation {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 50px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.item {
+    background-color: #2e1a47; /* Profondo viola */
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    opacity: 0;
+    animation: fadeInUp 1s forwards;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.item img {
+    width: 100%;
+    height: 200px; /* Manteniamo la stessa altezza per l'immagine */
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.item:hover img {
+    transform: scale(1.05);
+}
+
+.item h3 {
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 15px 0 5px;
+    color: #f1f1f1;
+    transition: color 0.3s ease;
+}
+
+.prezzo {
+    text-align: center;
+    font-weight: bold;
+    color: #dcdcdc;
+    padding-bottom: 20px;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+/* Pulsante "Aggiungi al carrello" */
+button[type="submit"] {
+    background-color: #4a2a7a; /* Viola scuro */
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    text-align: center;
+    margin-top: 20px; /* Maggiore spazio sopra il pulsante */
+    width: 100%; /* Il pulsante occupa tutta la larghezza della card */
+}
+
+button[type="submit"]:hover {
+    background-color: #5a3a8b;
+    transform: translateY(-2px);
+}
+
+button[type="submit"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(74, 42, 122, 0.6);
+}
+
+/* Animazioni */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Ritardo animazione per ogni card */
+.grid .item:nth-child(1) { animation-delay: 0.1s; }
+.grid .item:nth-child(2) { animation-delay: 0.2s; }
+.grid .item:nth-child(3) { animation-delay: 0.3s; }
+.grid .item:nth-child(4) { animation-delay: 0.4s; }
+.grid .item:nth-child(5) { animation-delay: 0.5s; }
+.grid .item:nth-child(6) { animation-delay: 0.6s; }
+.grid .item:nth-child(7) { animation-delay: 0.7s; }
+.grid .item:nth-child(8) { animation-delay: 0.8s; }
+.grid .item:nth-child(9) { animation-delay: 0.9s; }
