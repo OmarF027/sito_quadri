@@ -1,0 +1,60 @@
+/* MEDIA QUERIES */
+
+/* Layout per desktop */
+@media screen and (min-width: 1024px) {
+    .contact-grid {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        flex-wrap: wrap; /* Consente alle card di "avvolgersi" se necessario */
+    }
+
+    .map-card, .info-card {
+        flex: 1 1 48%; /* Ogni card occupa il 48% della larghezza disponibile */
+        box-sizing: border-box;
+    }
+
+    .map-card, .info-card {
+        margin-bottom: 20px; /* Spazio tra le card */
+    }
+}
+
+/* Layout per tablet (tra 768px e 1024px) */
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+    .contact-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .map-card, .info-card {
+        flex: 1 1 100%; /* Ogni card occuperà tutta la larghezza su tablet */
+    }
+}
+
+/* Layout per dispositivi mobili (fino a 767px) */
+@media screen and (max-width: 767px) {
+    .contact-grid {
+        display: flex;
+        flex-direction: column; /* Una sola colonna su mobile */
+        gap: 20px;
+    }
+
+    .map-card, .info-card {
+        flex: 1 1 100%; /* Ogni card occupa il 100% della larghezza */
+        padding: 15px; /* Aggiungi padding per migliorare la leggibilità */
+    }
+
+    /* Ridimensiona il testo per dispositivi mobili */
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+    }
+}

@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/cards.css">
     <link rel="stylesheet" href="css/quadri.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/mediaqueries.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
     <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">

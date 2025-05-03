@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/cards.css">
     <link rel="stylesheet" href="css/quadri.css">
+    <link rel="stylesheet" href="css/contatti.css">
+    <link rel="stylesheet" href="css/mediaqueries.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
     <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
@@ -20,142 +22,6 @@
 </head>
 
 <?php include('header.php'); ?>
-
-<style>
-  body {
-    background-color: #2e1a47; /* Midnight Purple */
-    color: #fff; /* Testo bianco */
-    font-family: Arial, sans-serif;
-  }
-
-  @keyframes slideIn {
-      0% {
-          transform: translateX(-100%);
-          opacity: 0;
-      }
-      100% {
-          transform: translateX(0);
-          opacity: 1;
-      }
-  }
-
-  @keyframes zoomFade {
-      0% {
-          transform: scale(0.8);
-          opacity: 0;
-      }
-      100% {
-          transform: scale(1);
-          opacity: 1;
-      }
-  }
-
-  .map-card, .info-card {
-      background: #3b1e5a; /* Un'ombra più scura di Midnight Purple */
-      border-radius: 15px;
-      padding: 30px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.4);
-      opacity: 0;
-      transform: scale(0.8);
-      animation: zoomFade 1s ease forwards;
-      transition: all 0.4s ease;
-  }
-
-  .map-card { animation-delay: 0.8s; }
-  .info-card { animation-delay: 1s; }
-
-  .map-card:hover, .info-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 30px rgba(138,43,226,0.6), 0 0 60px rgba(138,43,226,0.2); /* Viola chiaro */
-  }
-
-  .map-responsive {
-      position: relative;
-      padding-bottom: 75%;
-      border-radius: 10px;
-      overflow: hidden;
-  }
-
-  .map-responsive iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-  }
-
-  h1, h2, h3, p, a {
-      color: #fff; /* Tutti i testi principali in bianco */
-  }
-
-  h1 {
-      font-size: 3.5rem;
-      margin: 0 auto;
-      padding: 0 20px;
-      animation: slideIn 1s ease forwards;
-      animation-delay: 0.3s;
-      transform: translateX(-100%);
-      opacity: 0;
-      width: fit-content;
-      color: #fff; /* Imposta il colore del testo a bianco */
-      text-shadow: none; /* Rimuove il glow dal testo */
-  }
-
-  h2 {
-      font-size: 1.8rem;
-      margin: 10px auto 0;
-      padding: 0 20px;
-      animation: slideIn 1s ease forwards;
-      animation-delay: 0.6s;
-      transform: translateX(-100%);
-      opacity: 0;
-      width: fit-content;
-      color: #fff;
-      text-shadow: none; /* Rimuove il glow dal testo */
-  }
-
-  h3 {
-      margin-bottom: 25px;
-      font-size: 1.5rem;
-  }
-
-  .contact-info a {
-      color: #fff; /* Tutti i link in bianco */
-      text-decoration: none;
-  }
-
-  .contact-info a:hover {
-      text-decoration: underline;
-  }
-
-  .contact-section {
-      padding: 80px 0;
-      background-color: #1f1132;
-  }
-
-  .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: start;
-  }
-
-  .section-title {
-      font-size: 2rem;
-      color: #fff;
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-  }
-
-  .contact-header {
-      text-align: center;
-      margin-bottom: 40px;
-      color: #fff;
-      font-size: 2.5rem;
-  }
-</style>
 
 <!-- Contact Section -->
 <section class="contact-section">
