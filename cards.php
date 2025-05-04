@@ -1,29 +1,57 @@
 <section class="sezione">
   <style>
-    /* Impostazioni generali per il layout a piena pagina */
     html, body {
       height: 100%;
       margin: 0;
     }
 
-    /* Aggiungi altezza minima alla sezione */
     .sezione {
-      min-height: 100vh; /* Assicura che la sezione copra tutta l'altezza disponibile */
+      /* rimosso min-height e cambiato justify-content */
       display: flex;
       flex-direction: column;
-      justify-content: space-between; /* Spinge footer in basso se necessario */
+      justify-content: flex-start; /* allinea tutto in alto */
+      padding: 0 20px 60px;
     }
 
-    /* Media query per visualizzare le card in orizzontale a 768x460 */
-    @media screen and (width: 768px) and (height: 460px) {
+    .cards-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 0;
+    }
+
+    .card-item {
+      flex: 1 1 calc(33.333% - 1rem);
+      box-sizing: border-box;
+      margin-bottom: 0;
+      max-width: calc(33.333% - 1rem);
+    }
+
+    /* Media query per schermi piccoli (768px e 460px di altezza) */
+    @media screen and (max-width: 768px) and (max-height: 460px) {
       .cards-container {
-        display: grid !important;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
+        flex-direction: row; /* Mantieni la direzione orizzontale */
+        justify-content: space-between; /* Allinea le card orizzontalmente */
+        gap: 1rem;
+      }
+      .card-item {
+        flex: 1 1 calc(33.333% - 1rem); /* Le card restano orizzontali */
+        max-width: calc(33.333% - 1rem); /* 3 card per riga */
+      }
+    }
+
+    /* Media query per schermi più piccoli di 768px (ma con altezza superiore a 460px) */
+    @media screen and (max-width: 768px) {
+      .cards-container {
+        flex-direction: row; /* Mantieni le card orizzontali */
+        justify-content: space-between;
       }
 
       .card-item {
-        height: auto;
+        flex: 1 1 calc(33.333% - 1rem); /* Le card restano orizzontali */
+        max-width: calc(33.333% - 1rem); /* 3 card per riga */
       }
     }
   </style>
@@ -31,7 +59,6 @@
   <div class="section-inner">
     <h2>Perché scegliere Rachele WHX?</h2>
     <div class="cards-container">
-      
       <div class="card-item">
         <div class="card-content">
           <h3>Esperienza</h3>
@@ -52,7 +79,6 @@
           <p>Ascolto, dialogo e cura del cliente sono al centro di ogni progetto, per offrire soluzioni su misura e un’esperienza memorabile.</p>
         </div>
       </div>
-
     </div>
   </div>
 </section>
