@@ -36,6 +36,9 @@
         color: #fff; /* titolo bianco */
         text-align: center;
         margin-bottom: 40px;
+        opacity: 0;
+        animation: fadeIn 1s ease-out forwards;
+        animation-delay: 0.2s;
       }
 
       .contact-grid {
@@ -54,15 +57,22 @@
         padding: 30px;
         box-shadow: 0 0 20px rgba(0,0,0,0.4);
         transition: transform .3s ease, box-shadow .3s ease;
+        opacity: 0;
+        animation: fadeIn 1s ease-out forwards;
       }
 
       .map-card:hover,
       .info-card:hover {
-        transform: translateY(-5px) scale(1.02);
-        box-shadow:
-          0 0 10px rgba(255,255,255,0.2),
-          0 0 20px rgba(180,140,255,0.6),
-          0 0 30px rgba(180,140,255,0.4);
+        transform: translateY(-10px) scale(1.05); /* Ingrandimento maggiore */
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.2), 0 0 30px rgba(180, 140, 255, 0.8), 0 0 40px rgba(180, 140, 255, 0.6);
+      }
+
+      .map-card {
+        animation-delay: 0.4s;
+      }
+
+      .info-card {
+        animation-delay: 0.6s;
       }
 
       .section-title {
@@ -103,6 +113,9 @@
         grid-template-columns: 40px 1fr;
         align-items: start;
         gap: 15px;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeIn 1s ease-out forwards;
       }
 
       .info-item i {
@@ -120,12 +133,37 @@
 
       .info-item a {
         text-decoration: none;
-        transition: color .3s;
+        transition: color .3s, text-decoration .3s;
       }
 
       .info-item a:hover {
         color: #b38cff;
         text-decoration: underline;
+      }
+
+      /* Ritardi animazione per le info */
+      .info-item:nth-child(1) {
+        animation-delay: 0.7s;
+      }
+
+      .info-item:nth-child(2) {
+        animation-delay: 0.9s;
+      }
+
+      .info-item:nth-child(3) {
+        animation-delay: 1.1s;
+      }
+
+      /* Animazione di fade-in */
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
 
       @media (max-width: 767px) {
@@ -186,31 +224,35 @@
   <?php include('footer.php'); ?>
 
   <script>
-        // Menu Toggle
-        const menuToggle = document.getElementById('menuToggle');
-        const menuLinks = document.getElementById('menuLinks');
+    // Menu Toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const menuLinks = document.getElementById('menuLinks');
 
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            menuLinks.classList.toggle('active');
-        });
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        menuLinks.classList.toggle('active');
+    });
 
-        // Animazioni al caricamento
-        document.addEventListener('DOMContentLoaded', () => {
-            const heroText = document.querySelector('.hero-text');
-            const heroGallery = document.querySelector('.hero-gallery');
+    // Aggiungere animazione quando gli elementi entrano nella vista
+    document.addEventListener('scroll', () => {
+      const elements = document.querySelectorAll('.contact-header h1, .map-card, .info-card, .info-item');
 
-            if (heroText) {
-                heroText.style.opacity = '1';
-                heroText.style.transform = 'translateY(0)';
-            }
+      elements.forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight) {
+          el.classList.add('in-view');
+        }
+      });
+    });
 
-            if (heroGallery) {
-                heroGallery.style.opacity = '1';
-                heroGallery.style.transform = 'translateY(0)';
-            }
-        });
-    </script>
+    // Aggiungere la classe 'in-view' quando l'elemento è visibile
+    const style = document.createElement('style');
+    style.innerHTML = `
+      .in-view {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
 </body>
 </html>
-
