@@ -1,0 +1,1 @@
+Sito vetrina realizzato per un'artista che vende quadri online. Il sito è stato sviluppato utilizzando HTML, CSS, PHP e JavaScript per garantire un'esperienza utente fluida, moderna e responsive. Esplora la galleria delle opere e contatta direttamente l'artista per maggiori informazioni o richieste personalizzate.
